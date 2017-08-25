@@ -10,11 +10,12 @@ fi
 cd roi_pooling_layer
 
 if [ -d "$CUDA_PATH" ]; then
-	nvcc -std=c++11 -c -o roi_pooling_op.cu.o roi_pooling_op_gpu.cu.cc \
+	/usr/local/cuda/bin/nvcc -std=c++11 -c -o roi_pooling_op.cu.o roi_pooling_op_gpu.cu.cc \
 		-I $TF_INC -D GOOGLE_CUDA=1 -x cu -Xcompiler -fPIC $CXXFLAGS \
-		-arch=sm_37
+		-arch=sm_37 --expt-relaxed-constexpr
 
-	g++ -std=c++11 -shared -o roi_pooling.so roi_pooling_op.cc \
+	#g++ -std=c++11 -shared -o roi_pooling.so roi_pooling_op.cc \
+	g++ -std=c++11 -shared -D_GLIBCXX_USE_CXX11_ABI=0 -o roi_pooling.so roi_pooling_op.cc \
 		roi_pooling_op.cu.o -I $TF_INC  -D GOOGLE_CUDA=1 -fPIC $CXXFLAGS \
 		-lcudart -L $CUDA_PATH/lib64
 else
@@ -23,6 +24,8 @@ else
 fi
 
 cd ..
+#g++ -std=c++11 -shared -D_GLIBCXX_USE_CXX11_ABI=1 -o roi_pooling.so roi_pooling_op.cc \
+#	roi_pooling_op.cu.o -I $TF_INC -fPIC -lcudart -L $CUDA_PATH/lib64
 
 #cd feature_extrapolating_layer
 
