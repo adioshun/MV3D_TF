@@ -151,3 +151,21 @@ Mostly due to regression error
 
 [TFFRCNN](https://github.com/CharlesShang/TFFRCNN)
 
+--- 
+
+```python
+#lib/datasets/kitti_mv3d.py
+    def _load_kitti_calib(self, index):
+        """
+        load projection matrix
+
+        """
+        
+        if self._image_set == 'test':
+            prefix = 'testing/calib'
+        else:
+            prefix = 'training/calib'
+        if index == '0':
+            index = '000000'
+        calib_dir = os.path.join(self._data_path, prefix, index + '.txt')
+ ```
