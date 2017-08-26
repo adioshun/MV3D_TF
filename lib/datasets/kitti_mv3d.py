@@ -157,6 +157,8 @@ class kitti_mv3d(datasets.imdb):
             prefix = 'testing/calib'
         else:
             prefix = 'training/calib'
+        if index == '0':
+            index = '000000'       
         calib_dir = os.path.join(self._data_path, prefix, index + '.txt')
         
 #         P0 = np.zeros(12, dtype=np.float32)
