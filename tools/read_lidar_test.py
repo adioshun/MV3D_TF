@@ -114,7 +114,7 @@ def point_cloud_2_top(points,
 
     return top
 
-root_dir = "/workspace/MV3D_TF/data/KITTI/object/training"
+root_dir = "/workspace/MV3D_TF/data/KITTI/object/testing"
 velodyne = os.path.join(root_dir, "velodyne/")
 bird = os.path.join(root_dir, "lidar_bv/")
 
@@ -122,7 +122,7 @@ side_range = (-30., 30.)
 fwd_range = (0., 60)
 height_range = (-2, 0.4) #
 
-for i in range(7481):
+for i in range(7518):
     filename = velodyne + str(i).zfill(6) + ".bin"
     print("Processing: ", filename)
     scan = np.fromfile(filename, dtype=np.float32)
