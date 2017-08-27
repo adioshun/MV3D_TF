@@ -1,4 +1,9 @@
- 실행시"ImageSets/train.txt"필요로함
+ There is no mention about this two files(test.txt, train.txt) 
+ 
+ I just copy it base on my googling assumption. 
+ 
+ 
+this files required in "ImageSets/train.txt" execution. 
  
  ```python
      def _load_image_set_index(self):
