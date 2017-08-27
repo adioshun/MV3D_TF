@@ -5,7 +5,11 @@
 # Make sure to clone with --recursive
 cd /workspace
 git clone --recursive https://github.com/adioshun/MV3D_TF.git
+
+conda env create -f environment.yml --name MV3D
 ```
+
+
 
 2. Build the Cython modules
 ```Shell
