@@ -1,3 +1,14 @@
+
+# Docker 
+```shell
+docker pull adioshun/mv3d_tf:20170827
+sudo nvidia-docker run -i -t -p 2222:2222 -p 8585:8585 --volume /mnt/docker:/root -v /mnt/aws/kitti/object/:/workspace --name 'MV3D' adioshun/mv3d_tf:20170827 /bin/bash
+
+```
+
+
+---
+
 ### Installation 
 
 1. Clone the Faster R-CNN repository
