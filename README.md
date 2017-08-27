@@ -1,3 +1,22 @@
+### Installation 
+
+1. Clone the Faster R-CNN repository
+```Shell
+  # Make sure to clone with --recursive
+  git clone --recursive https://github.com/adioshun/MV3D_TF.git
+```
+
+2. Build the Cython modules
+   ```Shell
+    cd $MV3D/lib
+    make
+   ```
+
+
+
+
+---
+
 # MV3D_TF(In progress)
 
 This is an experimental Tensorflow implementation of MV3D - a ConvNet for object detection with Lidar and Mono-camera.
