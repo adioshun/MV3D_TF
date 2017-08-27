@@ -7,10 +7,37 @@
 ```
 
 2. Build the Cython modules
-   ```Shell
-    cd $MV3D/lib
-    make
-   ```
+```Shell
+cd $MV3D/lib
+#modify ./lib/setup.py '-arch=sm_37' depend on your GPU acrhitecture
+make
+ ```
+
+5. Download pre-trained ImageNet models
+
+```Shell
+cd /workspace/MV3D_TF/data/pretrain_model
+wget https://www.dropbox.com/s/po2kzdhdgl4ix55/VGG_imagenet.npy?dl=0
+mv VGG_imagenet.npy?dl=0 GG_imagenet.npy
+```
+
+2. File Download
+```
+
+```
+
+3. Create birdview
+```
+# Make birdview birdview dir
+mkdir /workspace/MV3D_TF/data/KITTI/object/training/lidar_bv
+mkdir /workspace/MV3D_TF/data/KITTI/object/testing/lidar_bv
+python ./tools/read_lidar_tr.py
+python ./tools/read_lidar_test.py
+```
+
+> Error :`libSM.so.6: cannot open shared object file` -> ` apt-get install libsm6 libxrender1 libfontconfig1`
+
+4. 
 
 
 
