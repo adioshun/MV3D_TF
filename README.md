@@ -54,7 +54,11 @@ cd ./tools
 bash run_train_net.sh
 ```
 
-
+7. Run testing
+```
+cd ./tools
+bash run_test_net.sh
+```
 
 
 ---
