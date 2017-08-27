@@ -23,7 +23,13 @@ mv VGG_imagenet.npy?dl=0 GG_imagenet.npy
 
 2. File Download
 ```
-
+# cd /workspace/MV3D/data/KITTI/object
+wget http://kitti.is.tue.mpg.de/kitti/data_object_image_2.zip
+wget http://kitti.is.tue.mpg.de/kitti/data_object_image_3.zip
+wget http://kitti.is.tue.mpg.de/kitti/data_object_velodyne.zip
+wget http://kitti.is.tue.mpg.de/kitti/data_object_calib.zip
+wget http://kitti.is.tue.mpg.de/kitti/data_object_label_2.zip
+# unzip all files
 ```
 
 3. Create birdview
