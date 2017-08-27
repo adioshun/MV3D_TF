@@ -2,8 +2,9 @@
 
 1. Clone the Faster R-CNN repository
 ```Shell
-  # Make sure to clone with --recursive
-  git clone --recursive https://github.com/adioshun/MV3D_TF.git
+# Make sure to clone with --recursive
+cd /workspace
+git clone --recursive https://github.com/adioshun/MV3D_TF.git
 ```
 
 2. Build the Cython modules
@@ -13,7 +14,7 @@ cd $MV3D/lib
 make
  ```
 
-5. Download pre-trained ImageNet models
+3. Download pre-trained ImageNet models
 
 ```Shell
 cd /workspace/MV3D_TF/data/pretrain_model
@@ -21,7 +22,7 @@ wget https://www.dropbox.com/s/po2kzdhdgl4ix55/VGG_imagenet.npy?dl=0
 mv VGG_imagenet.npy?dl=0 GG_imagenet.npy
 ```
 
-2. File Download
+4. File Download
 ```
 # cd /workspace/MV3D/data/KITTI/object
 wget http://kitti.is.tue.mpg.de/kitti/data_object_image_2.zip
@@ -32,7 +33,7 @@ wget http://kitti.is.tue.mpg.de/kitti/data_object_label_2.zip
 # unzip all files
 ```
 
-3. Create birdview
+5. Create birdview
 ```
 # Make birdview birdview dir
 mkdir /workspace/MV3D_TF/data/KITTI/object/training/lidar_bv
@@ -43,7 +44,11 @@ python ./tools/read_lidar_test.py
 
 > Error :`libSM.so.6: cannot open shared object file` -> ` apt-get install libsm6 libxrender1 libfontconfig1`
 
-4. 
+6. Run training
+```
+cd ./tools
+bash run_train_net.sh
+```
 
 
 
